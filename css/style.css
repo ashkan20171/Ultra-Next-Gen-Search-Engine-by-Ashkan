@@ -1,9 +1,8 @@
-/* فونت */
+/* ------------ عمومی ------------ */
 body, input, button {
   font-family: 'Vazirmatn', sans-serif;
 }
 
-/* پس‌زمینه فضای لوکس و نرم */
 .ax-body {
   background: radial-gradient(circle at top, #1c1f29, #0a0c13);
   min-height: 100vh;
@@ -11,7 +10,6 @@ body, input, button {
   overflow-x: hidden;
 }
 
-/* جلوه شیشه‌ای */
 .glass {
   backdrop-filter: blur(18px);
   background: rgba(255, 255, 255, 0.07);
@@ -19,7 +17,7 @@ body, input, button {
   border-radius: 14px;
 }
 
-/* هدر شیشه‌ای */
+/* ------------ هدر ------------ */
 .ax-header {
   display: flex;
   justify-content: space-between;
@@ -36,17 +34,18 @@ body, input, button {
   font-weight: 700;
   background: linear-gradient(90deg, #c84bff, #4bd3ff);
   -webkit-background-clip: text;
+  background-clip: text;   /* ✅ جدید */
   color: transparent;
 }
 
-/* انیمیشن آغاز برند */
+/* ------------ انیمیشن ورودی ------------ */
 .ax-intro {
   position: fixed;
   inset: 0;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   animation: fadeOut 1.8s forwards 1.4s;
   z-index: 999;
 }
@@ -56,6 +55,7 @@ body, input, button {
   font-weight: 700;
   background: linear-gradient(90deg, #ff72ff, #44e9ff);
   -webkit-background-clip: text;
+  background-clip: text;   /* ✅ جدید */
   color: transparent;
   animation: glow 2s infinite alternate;
 }
@@ -69,7 +69,7 @@ body, input, button {
   to { opacity: 0; visibility: hidden; }
 }
 
-/* بخش اصلی */
+/* ------------ صفحه اصلی جستجو ------------ */
 .ax-main {
   padding-top: 150px;
   text-align: center;
@@ -80,11 +80,8 @@ body, input, button {
   margin-bottom: 25px;
 }
 
-/* باکس جستجو */
 .ax-search-box {
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 12px;
   padding: 14px;
   width: 60%;
@@ -94,55 +91,66 @@ body, input, button {
 .ax-search-box input {
   width: 100%;
   padding: 14px;
-  border: none;
-  outline: none;
   border-radius: 10px;
   background: rgba(255,255,255,0.15);
-  color: #fff;
-  font-size: 18px;
+  border: none;
+  color: white;
 }
 
 .ax-search-box button {
   padding: 14px 20px;
-  cursor: pointer;
   border-radius: 10px;
   border: none;
-  background: linear-gradient(90deg, #d946ff, #48e1ff);
-  color: #000;
-  font-weight: 700;
-  transition: 0.25s;
-}
-
-.ax-search-box button:hover {
-  transform: scale(1.08);
-}
-
-/* تب‌های دسته‌بندی جستجو */
-.ax-tabs {
-  margin-top: 25px;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
-.ax-tabs button {
-  padding: 8px 16px;
-  border-radius: 12px;
-  border: none;
   cursor: pointer;
-  background: rgba(255,255,255,0.08);
-  color: #fff;
+  background: linear-gradient(90deg, #d946ff, #48e1ff);
+  color: black;
+  font-weight: bold;
+  transition: .25s;
 }
 
+.ax-search-box button:hover { transform: scale(1.08); }
+
+.ax-tabs { margin-top: 25px; display:flex; justify-content:center; gap:15px; }
+.ax-tabs button {
+  padding:8px 16px; border-radius:12px; border:none; cursor:pointer;
+  background:rgba(255,255,255,.08); color:#fff;
+}
 .ax-tabs button.active,
 .ax-tabs button:hover {
-  background: linear-gradient(90deg, #c84bff, #4bd3ff);
+  background:linear-gradient(90deg,#c84bff,#4bd3ff);
 }
 
-/* فوتر */
-.ax-footer {
-  text-align: center;
-  padding: 40px 0;
-  opacity: 0.6;
-  margin-top: 80px;
+/* ------------ نتایج جستجو ------------ */
+.results-container { max-width: 900px; margin: 140px auto; padding: 0 20px; }
+
+.result-item {
+  background: rgba(255,255,255,0.06);
+  padding: 18px;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  transition: .3s;
+  cursor: pointer;
 }
+.result-item:hover {
+  background: rgba(255,255,255,0.14);
+  transform: translateY(-3px);
+}
+
+.result-title {
+  font-size: 20px;
+  font-weight: bold;
+  background: linear-gradient(90deg,#b44bff,#4bd3ff);
+  -webkit-background-clip: text;
+  background-clip: text;   /* ✅ جدید */
+  color: transparent;
+}
+.result-link { opacity: .7; font-size:14px; direction:ltr; }
+.result-snippet { margin-top: 6px; opacity:.9; line-height:1.8; }
+
+/* تصاویر */
+.image-grid { display:grid; gap:12px; grid-template-columns:repeat(auto-fill, minmax(160px, 1fr)); }
+.image-grid img { width:100%; border-radius:12px; transition:.3s; cursor:zoom-in; }
+.image-grid img:hover { transform:scale(1.12); }
+
+/* فوتر */
+.ax-footer { text-align:center; opacity:.6; margin-top:80px; padding-bottom:40px; }
