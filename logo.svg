@@ -1,0 +1,14 @@
+<svg width="260" height="100" viewBox="0 0 260 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<text x="5" y="70" font-family="Verdana" font-size="60" font-weight="bold" fill="#4bd3ff" filter="url(#glow)">
+ASHKAN<tspan fill="#ab54ff">X</tspan>
+</text>
+<defs>
+<filter id="glow">
+<feGaussianBlur stdDeviation="4" result="coloredBlur"></feGaussianBlur>
+<feMerge>
+<feMergeNode in="coloredBlur"></feMergeNode>
+<feMergeNode in="SourceGraphic"></feMergeNode>
+</feMerge>
+</filter>
+</defs>
+</svg>

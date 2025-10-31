@@ -1,4 +1,25 @@
 /* ------------ عمومی ------------ */
+:root {
+  --bg: #0b0f12;
+  --glass: rgba(255,255,255,0.08);
+  --neon-blue: #4bd3ff;
+  --neon-purple: #ab54ff;
+  --text: #eaeaea;
+  --radius: 18px;
+}
+.glass {
+  backdrop-filter: blur(14px) saturate(180%);
+  background: var(--glass);
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 0 18px rgba(75, 211, 255, .25);
+  transition: 0.35s ease;
+}
+.glass:hover {
+  box-shadow: 0 0 32px rgba(171, 84, 255, .55);
+}
+
+
 body, input, button {
   font-family: 'Vazirmatn', sans-serif;
 }
